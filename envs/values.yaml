@@ -1,0 +1,6 @@
+base_argo:
+  apps:
+    dev:
+      namespace: dev
+      repoUrl: https://github.com/Adrian-Hawkins/argocd-test.git
+      path: dev

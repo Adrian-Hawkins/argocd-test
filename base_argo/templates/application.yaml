@@ -1,23 +1,22 @@
+{{- range $key, $val := .Values.apps }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: dev-test-app
+  name: {{ $key }}-{{ $val.namespace }}
   namespace: argocd
 spec:
   project: default
-
   source:
-    repoURL: https://github.com/Adrian-Hawkins/argocd-test.git
+    repoURL: {{ $val.repoUrl }}
     targetRevision: HEAD
-    path: dev/test-app
-  destination: 
+    path: {{ $val.path }}
+  destination:
     server: https://kubernetes.default.svc
-    namespace: dev
-
+    namespace: {{ $val.namespace }}
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
 
-    automated:
-      selfHeal: true
-      prune: true
+
+---
+{{- end }}

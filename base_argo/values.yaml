@@ -1,0 +1,4 @@
+# apps:
+#   backend:
+#     repoUrl: https://github.com/Adrian-Hawkins/argocd-test.git
+#     path: backend

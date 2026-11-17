@@ -1,0 +1,6 @@
+dependencies:
+- name: base_argo
+  repository: file://../base_argo
+  version: 0.1.0
+digest: sha256:e8d9aa1e85de02e0d8f536cf618680f5ba0e58cebb4933e2b05b2c3445467e8d
+generated: "2026-11-17T15:10:50.9165397+02:00"
