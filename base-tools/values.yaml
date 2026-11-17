@@ -8,7 +8,7 @@ base_argo:
       namespace: jenkins
       repoUrl: https://github.com/Adrian-Hawkins/argocd-test.git
       path: tools/jenkins
-    kube-rpom-stack:
+    kube-prom-stack:
       namespace: monitoring
       repoUrl: https://github.com/Adrian-Hawkins/argocd-test.git
-      path: tools/kube-rpom-stack
+      path: tools/kube-prom-stack
