@@ -4,3 +4,7 @@ base_argo:
       namespace: istio-system
       repoUrl: https://github.com/Adrian-Hawkins/argocd-test.git
       path: tools/istio
+    jenkins:
+      namespace: jenkins
+      repoUrl: https://github.com/Adrian-Hawkins/argocd-test.git
+      path: tools/jenkins
