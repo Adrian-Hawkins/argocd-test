@@ -1,0 +1,5 @@
+istiod:
+  global:
+    istioNamespace: "istio-system"
+  # Alternatively, if you need to pass a specific namespace override or global scope:
+  namespace: "istio-system"

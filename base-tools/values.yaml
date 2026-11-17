@@ -3,4 +3,4 @@ base_argo:
     istio:
       namespace: istio-system
       repoUrl: https://github.com/Adrian-Hawkins/argocd-test.git
-      path: istio
+      path: tools/istio

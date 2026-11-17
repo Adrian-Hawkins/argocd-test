@@ -4,7 +4,7 @@ base_argo:
       namespace: dev
       repoUrl: https://github.com/Adrian-Hawkins/argocd-test.git
       path: dev
-    istio-app:
-      namespace: istio-system
+    base-tools:
+      namespace: argocd
       repoUrl: https://github.com/Adrian-Hawkins/argocd-test.git
-      path: istio-app
+      path: base-tools
