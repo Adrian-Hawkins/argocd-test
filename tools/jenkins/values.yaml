@@ -2,15 +2,6 @@ jenkins:
   controller:
     runAsUser: 1000
     fsGroup: 1000
-    customInitContainers:
-      - name: fix-permissions
-        image: busybox:1.36
-        command: ["sh", "-c", "chown -R 1000:1000 /var/jenkins_home"]
-        securityContext:
-          runAsUser: 0
-        volumeMounts:
-          - name: jenkins-home
-            mountPath: /var/jenkins_home
     admin:
       username: admin
       password: mySuperSecretPassword 
@@ -27,9 +18,9 @@ jenkins:
       enabled: false
 
 
-    additionalExistingSecrets:
-      - name: jenkins-github-token
-        keyName: token
+    # additionalExistingSecrets:
+    #   - name: jenkins-github-token
+    #     keyName: token
 
     JCasC:
       defaultConfig: true
@@ -57,16 +48,6 @@ jenkins:
                           remote: "https://github.com/adrian-hawkins-portfolio/adoption_agency.k8s.jenkins.git"
                           traits:
                             - "gitBranchDiscovery"
-
-          credentials:
-            system:
-              domainCredentials:
-                - credentials:
-                    - usernamePassword:
-                        id: "github-push-token"
-                        scope: GLOBAL
-                        username: "Adrian-Hawkins"
-                        password: "${jenkins-github-token-token}"
 
   agent:
     podTemplates:
